@@ -13,6 +13,9 @@
         Enter Password: <input type="password" name="ps" placeholder="Enter Password">
         <span id="pserr"></span>
         <br>
+        Enter Confirm Password: <input type="password" name="confps" placeholder="Enter Confirm Password">
+        <span id="confpserr"></span>
+        <br>
         <input type="submit" name="submit" value="Submit" onclick="return Validate()">
 
     </form>
@@ -27,6 +30,27 @@
                 document.getElementById("pserr").innerHTML = "Enter Password";
                 formvalidation.ps.focus();
                 return false;
+            }
+            if (formvalidation.un.value == formvalidation.ps.value) {
+                alert("Do not use same username and password...");
+            }
+            if (!(formvalidation.un.value.length > 6 && formvalidation.un.value.length < 20)) {
+                document.getElementById("unerr").innerHTML = "Enter character more than 6 and less than 20.";
+                formvalidation.un.focus();
+                return false;
+            }
+            if(!(isNaN(formvalidation.ps.value)))
+            {
+                alert("Password can not be numeric.");
+            }
+            if(formvalidation.ps.value != formvalidation.confps.value)
+            {
+                document.getElementById("confpserr").innerHTML = "Password and confirm password are not same.";
+                return false;
+            }
+            else {
+                document.getElementById("unerr").innerHTML = "";
+                return true;
             }
         }
     </script>
