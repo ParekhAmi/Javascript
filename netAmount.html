@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Interest and Net Amount</title>
+</head>
+
+<body>
+    <form name="f2">
+        Amount <input type="number" name="amount" required onblur="Hello()"><br>
+        Rate Of Interest <input type="radio" name="int" onClick="Calculate()" value="6" checked>6%
+        <input type="radio" name="int" value="8" onClick="Calculate()">8%
+        <input type="radio" name="int" value="12" onClick="Calculate()">12%
+        <br>
+        No. of Months <select name="months" onclick="Calculate()">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select><br>
+        <input type="button" name="calculate" value="Calculate" onclick="Calculate()">&nbsp;
+        <input type="reset" name="reset" value="Reset"><br>
+
+        Interest Amount <input type="number" name="intAmount" readonly><br>
+        Net Amount <input type="number" name="netAmount" readonly>
+
+    </form>
+
+    <script>
+        function Calculate()
+        {
+            var Interest = 0;
+            var NetAmount = 0;
+            var Interest  = parseFloat(f2.amount.value) * parseFloat((f2.int.value)/100) * parseFloat(f2.months.value);
+             NetAmount = parseFloat(f2.amount.value) + parseFloat(Interest);
+
+            f2.intAmount.value = Interest;
+            f2.netAmount.value = NetAmount;
+        }
+        function Hello()
+        {
+            // alert("On BLur Event is Fired...");
+            var Interest = 0;
+            var NetAmount = 0;
+            var Interest  = parseFloat(f2.amount.value) * parseFloat((f2.int.value)/100) * parseFloat(f2.months.value);
+             NetAmount = parseFloat(f2.amount.value) + parseFloat(Interest);
+
+            f2.intAmount.value = Interest;
+            f2.netAmount.value = NetAmount;
+
+        }
+    </script>
+</body>
+
+</html>
