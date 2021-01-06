@@ -1,0 +1,40 @@
+div.param1{
+    margin:20px;
+    display: inline-block;
+    border: 2px solid rgb(8, 44, 160);
+    box-shadow: 5px 10px darkslategrey;
+    border-radius: 15px 50px 30px;
+    background-image: url("C:\\Users\\Admin\\Pictures\\Good-Nature-Wallpapers-HD-1.jpg");
+    padding: 20px;
+    width: 200px;
+    height:200px;
+    text-align: center;
+    text-transform: uppercase;
+    color:black;
+    text-shadow: 0 0 3px cyan;
+    opacity: 0.3;
+
+    font-size: 20px;
+}
+div.param1:hover{
+    box-shadow: 10px 10px lightpink;
+    border-radius: 50px 10px 30px;
+    opacity:1.0;
+}
+
+ul{
+    list-style-type: circle;
+    width:60px;
+    
+}
+
+li a{
+    display: block;
+    width: 60px;  
+    padding: 8px 16px;
+}
+li a:hover {
+    background-color: #555;
+    color: white;
+    
+  }
