@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form name="formvalidation">
+
+        Enter User Name: <input type="text" name="un" placeholder="Enter User Name">
+        <span id="unerr"></span>
+        <br>
+        Enter Password: <input type="password" name="ps" placeholder="Enter Password">
+        <span id="pserr"></span>
+        <br>
+        <input type="submit" name="submit" value="Submit" onclick="return Validate()">
+
+    </form>
+    <script>
+        function Validate() {
+            if (formvalidation.un.value == "") {
+                document.getElementById("unerr").innerHTML = "Enter Username";
+                formvalidation.un.focus();
+                return false;
+            }
+            if (formvalidation.ps.value == "") {
+                document.getElementById("pserr").innerHTML = "Enter Password";
+                formvalidation.ps.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
