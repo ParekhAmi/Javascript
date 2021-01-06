@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Arithmrtic Operations</title>
+</head>
+
+<body>
+    <!-- <form name="formArithmetic">
+        Enter No. 1 <input type="number" name="n1" required>
+        <br>
+        Enter No. 2 <input type="number" name="n2" required>
+        <br>
+        <input type="button" name="btnArithmetic" value="Arithmetic" onclick="Arithmetic()">
+        <br>
+        Ans: <input type="number" name="Ans" readonly>
+
+
+        <script>
+            function Arithmetic() {
+                var op = prompt("Enter which operation do you want?");
+                document.title = op;
+
+                if (op == "Addition") {
+                    var a = formArithmetic.n1.value;
+                    var b = formArithmetic.n2.value;
+
+                    var sum = parseInt(a) + parseInt(b);
+                    formArithmetic.Ans.value = sum;
+                }
+            }
+        </script>
+    </form> -->
+
+
+    <form name="formArithmetic">
+        Enter No. 1 <input type="number" name="n1" required> <br>
+        Enter No. 2 <input type="number" name="n2" required> <br>
+
+        <input type="button" value="+" name="btnplus" id="plus" onclick="Arithmetic('+')">
+        <input type="button" value="-" name="btnminus" id="minus" onclick="Arithmetic('-')">
+        <input type="button" value="*" name="btnmultiplication" id="multiplication" onclick="Arithmetic(this.value)">
+        <input type="button" value="/" name="btndivision" id="division" onclick="Arithmetic(this.value)">
+        <input type="button" value="%" name="btnmodulo" id="modulo" onclick="Arithmetic(this.value)">
+
+        <br>
+
+        Answer <input type="number" name="ans" readonly>
+
+    </form>
+
+    <script>
+        function Arithmetic(opr) {
+            var a = formArithmetic.n1.value;
+            var b = formArithmetic.n2.value;
+            var c;
+            if (opr == "+") {
+                c = parseInt(a) + parseInt(b);
+
+            }
+            if (opr == "-") {
+                c = parseInt(a) - parseInt(b);
+
+            }
+            if (opr == "*") {
+                c = parseInt(a) * parseInt(b);
+
+            }
+            if (opr == "/") {
+                c = parseInt(a) / parseInt(b);
+
+            }
+            if (opr == "%") {
+                c = parseInt(a) % parseInt(b);
+
+            }
+            formArithmetic.ans.value = c;
+        }
+    </script>
+</body>
+
+</html>
