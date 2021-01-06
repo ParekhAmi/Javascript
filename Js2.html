@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>JS Intro</title>
+</head>
+
+<body>
+    <form name="f1">
+        Enter No 1 : <input type="number" name="n1" required>
+        <Br>
+        Enter No 2 : <input type="number" name="n2" required>
+        <Br>
+        <input type="button" value="+" name="btnplus" onClick="Add()">
+        <input type="button" value="-" name="btnminus" onclick="Sub()">
+        <input type="button" value="*" name="btnmultiplication" onclick="Mul()">
+        <input type="button" value="/" name="btndivision" onclick="Div()">
+        <input type="button" value="%" name="btnmodulo" onclick="Mod()">
+        ANs : <input type="number" name="ans" readonly>
+    </form>
+
+    <script>
+        var p = prompt("Enter the Title...");
+        document.title = p;
+
+        var q = prompt("Enter the Background color of Page");
+        document.bgColor = q;
+        function Add() {
+            if (f1.n1.value == "") {
+                alert("Please Enter the No1 ");
+                f1.n1.focus();
+                return false;
+            }
+            if (f1.n2.value == "") {
+                alert("Please Enter the No2 ");
+                f1.n2.focus();
+                return false;
+            }
+            else {
+                //    alert("Add is Called..");
+                var a = f1.n1.value;
+                var b = f1.n2.value;
+
+                var c = parseInt(a) + parseInt(b);
+                f1.ans.value = c;
+            }
+        }
+        function Sub() {
+            if (f1.n1.value == "") {
+                alert("Please Enter the No1 ");
+                f1.n1.focus();
+                return false;
+            }
+            if (f1.n2.value == "") {
+                alert("Please Enter the No2 ");
+                f1.n2.focus();
+                return false;
+            }
+            else {
+                var a = f1.n1.value;
+                var b = f1.n2.value;
+
+                var c = parseInt(a) - parseInt(b);
+                f1.ans.value = c;
+            }
+        }
+        function Mul() {
+            if (f1.n1.value == "") {
+                alert("Please Enter the No1 ");
+                f1.n1.focus();
+                return false;
+            }
+            if (f1.n2.value == "") {
+                alert("Please Enter the No2 ");
+                f1.n2.focus();
+                return false;
+            }
+            else {
+                var a = f1.n1.value;
+                var b = f1.n2.value;
+
+                var c = parseInt(a) * parseInt(b);
+                f1.ans.value = c;
+            }
+        }
+        function Div()
+        {
+            if (f1.n1.value=="")
+            {
+                alert("Please Enter the No1 ");
+                f1.n1.focus();
+                return false;
+            }
+            if(f1.n2.value=="")
+            {
+                alert("Please Enter the No2 ");
+                f1.n2.focus();
+                return false;
+            }
+            else
+            {
+                var a = f1.n1.value;
+                var b = f1.n2.value;
+
+                var c = parseInt(a) / parseInt(b);
+                f1.ans.value = c;
+            }
+        }
+        function Mod() {
+            if (f1.n1.value == "") {
+                alert("Please Enter the No1 ");
+                f1.n1.focus();
+                return false;
+            }
+            if (f1.n2.value == "") {
+                alert("Please Enter the No2 ");
+                f1.n2.focus();
+                return false;
+            }
+            else {
+                var a = f1.n1.value;
+                var b = f1.n2.value;
+
+                var c = parseInt(a) % parseInt(b);
+                f1.ans.value = c;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
