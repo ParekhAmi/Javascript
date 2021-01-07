@@ -16,11 +16,21 @@
         Enter Confirm Password: <input type="password" name="confps" placeholder="Enter Confirm Password">
         <span id="confpserr"></span>
         <br>
+        Email: <input type="email" name="email">
+        <span id="emailerr"></span>
+        <br>
+        Contact No.: <input type="number" name="phone">
+        <span id="phoneerr"></span>
+        <br>
         <input type="submit" name="submit" value="Submit" onclick="return Validate()">
 
     </form>
     <script>
-        function Validate() {
+        function Validate() 
+        {
+
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
             if (formvalidation.un.value == "") {
                 document.getElementById("unerr").innerHTML = "Enter Username";
                 formvalidation.un.focus();
@@ -42,14 +52,31 @@
             if(!(isNaN(formvalidation.ps.value)))
             {
                 alert("Password can not be numeric.");
+                return false;
             }
             if(formvalidation.ps.value != formvalidation.confps.value)
             {
                 document.getElementById("confpserr").innerHTML = "Password and confirm password are not same.";
                 return false;
             }
+            if(!(formvalidation.email.value.match(mailformat)))
+            {
+                document.getElementById("emailerr").innerHTML = "You have entered an invalid email address.";
+                formvalidation.email.focus();
+                return false;
+            }
+            if(formvalidation.phone.value.length != 10)
+            {
+                document.getElementById("phoneerr").innerHTML = "Enter 10 numbers only.";
+                formvalidation.phone.focus();
+                return false;
+            }
             else {
+                console.log('INSIDE ELESE....');
+                alert("Inside Else...");
                 document.getElementById("unerr").innerHTML = "";
+                document.getElementById("pserr").innerHTML = "";
+                document.getElementById("emailerr").innerHTML = "";
                 return true;
             }
         }
