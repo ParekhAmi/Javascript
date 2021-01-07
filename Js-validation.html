@@ -2,7 +2,7 @@
 
 <head>
     <title>Form Validation</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -51,11 +51,28 @@
         <br>
 
         <input type="submit" name="submit" value="Submit" onclick="return Validate()">
-
+        <!-- document print using window.print()-->
+        <input type="button" value="Print Me" onclick="javascript:window.print()">
+        <!--Window open and close button-->
+        <input type="button" value="Open" onclick="winOpen()">
+        <input id="close_window" type="button" class="btn btn-success" style="font-weight: bold;display: inline;"
+            value="Close Me">
 
     </form>
 
+    <!-- Window closed using window.close() with help of jQuery-->
     <script>
+        $('#close_window').on('click', function () {
+            console.log('CLick Event fire..');
+            window.opener = self;
+            mywin.close();
+            window.close();
+        });
+    </script>
+    <script>
+        function winOpen() {
+            mywin = window.open('netAmount.html', '_blank');
+        }
 
         // copydata of current address into permanent address.
         function CopyData() {
