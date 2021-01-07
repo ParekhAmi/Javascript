@@ -2,6 +2,8 @@
 
 <head>
     <title>Form Validation</title>
+
+
 </head>
 
 <body>
@@ -22,58 +24,121 @@
         Contact No.: <input type="number" name="phone">
         <span id="phoneerr"></span>
         <br>
+
+        Current Address: <textarea name="address"></textarea>
+        <br>
+        City: <input type="text" name="city">
+        <br>
+        State: <input type="text" name="state">
+        <br>
+        Country: <input type="text" name="country">
+        <br> <br>
+        <input type="checkbox" onClick="CopyData()" name="addcheckbox"> Check this checkbox if permanent address is same
+        as current.
+        <br>
+
+        Permenant Address: <textarea name="peraddress"></textarea>
+        <br>
+        City: <input type="text" name="percity">
+        <br>
+        State: <input type="text" name="perstate">
+        <br>
+        Country: <input type="text" name="percountry">
+        <br>
+
+        <input type="radio" name="male" id="gmale" value="Male">Male
+        <input type="radio" name="male" id="gfemale" value="Female">Female
+        <br>
+
         <input type="submit" name="submit" value="Submit" onclick="return Validate()">
 
-    </form>
-    <script>
-        function Validate() 
-        {
 
+    </form>
+
+    <script>
+
+        // copydata of current address into permanent address.
+        function CopyData() {
+
+            if (formvalidation.addcheckbox.checked == true) {
+                //alert("Checkbox is checked....");
+                formvalidation.peraddress.value = formvalidation.address.value;
+                formvalidation.percity.value = formvalidation.city.value;
+                formvalidation.perstate.value = formvalidation.state.value;
+                formvalidation.percountry.value = formvalidation.country.value;
+                return false;
+            }
+            else if (formvalidation.addcheckbox.checked == false) {
+                alert("checkbox is unchecked...");
+                formvalidation.peraddress.value = "";
+                formvalidation.percity.value = "";
+                formvalidation.perstate.value = "";
+                formvalidation.percountry.value = "";
+                return false;
+            }
+        }
+
+        // Form Validation
+        function Validate() {
+
+            // Email Validation
             var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+            //username can not be null
             if (formvalidation.un.value == "") {
                 document.getElementById("unerr").innerHTML = "Enter Username";
                 formvalidation.un.focus();
                 return false;
             }
+            //password can not be null
             if (formvalidation.ps.value == "") {
                 document.getElementById("pserr").innerHTML = "Enter Password";
                 formvalidation.ps.focus();
                 return false;
             }
+            //username and password can not be same
             if (formvalidation.un.value == formvalidation.ps.value) {
                 alert("Do not use same username and password...");
             }
+            //username must have more than 6 and less than 20 characters
             if (!(formvalidation.un.value.length > 6 && formvalidation.un.value.length < 20)) {
                 document.getElementById("unerr").innerHTML = "Enter character more than 6 and less than 20.";
                 formvalidation.un.focus();
                 return false;
             }
-            if(!(isNaN(formvalidation.ps.value)))
-            {
+            //Password can not be numeric
+            if (!(isNaN(formvalidation.ps.value))) {
                 alert("Password can not be numeric.");
                 return false;
             }
-            if(formvalidation.ps.value != formvalidation.confps.value)
-            {
+            //Password and confirm password must be same
+            if (formvalidation.ps.value != formvalidation.confps.value) {
                 document.getElementById("confpserr").innerHTML = "Password and confirm password are not same.";
                 return false;
             }
-            if(!(formvalidation.email.value.match(mailformat)))
-            {
+            //Email validation
+            if (!(formvalidation.email.value.match(mailformat))) {
                 document.getElementById("emailerr").innerHTML = "You have entered an invalid email address.";
                 formvalidation.email.focus();
                 return false;
             }
-            if(formvalidation.phone.value.length != 10)
-            {
+            //Mobile number must have 10 numbers
+            if (formvalidation.phone.value.length != 10) {
                 document.getElementById("phoneerr").innerHTML = "Enter 10 numbers only.";
                 formvalidation.phone.focus();
                 return false;
             }
+            //Check Gender selection using Array and Id
+
+            //if ((document.getElementById("gmale").checked || document.getElementById("gfemale").checked)==false){
+            if (formvalidation.male[0].checked == false && formvalidation.male[1].checked == false) {
+                alert("Please select your gender..");
+                return false;
+            }
+
             else {
-                console.log('INSIDE ELESE....');
-                alert("Inside Else...");
+
+                //span value must be null after correction in text field
                 document.getElementById("unerr").innerHTML = "";
                 document.getElementById("pserr").innerHTML = "";
                 document.getElementById("emailerr").innerHTML = "";
