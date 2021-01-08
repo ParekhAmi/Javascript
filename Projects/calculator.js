@@ -1,8 +1,6 @@
 function numdisonscreen(num) {
 
     calc.screen.value = num;
-    
-
 }
 
 
