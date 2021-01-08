@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
+</head>
+
+<body>
+    <form name="calc">
+        <div>
+        <input type="number" name="screen">
+        <br>
+        <button type="button" name="AC" class="sym" value="AC" >AC</button>
+        <button type="button" name="modulo" class="sym" value="%" onclick="Arithmetic(this.value)">%</button>
+        <button type="reset" name="reset" class="sym" value="C">C</button>
+        <button type="button" name="division" class="ope" value="/" onclick="Arithmetic(this.value)">/</button>
+        <br>
+        <button type="button" name="seven" value="7" onclick="numdisonscreen(this.value)">7</button>
+        <button type="button" name="eight" value="8" onclick="numdisonscreen(this.value)">8</button>
+        <button type="button" name="nine" value="9" onclick="numdisonscreen(this.value)">9</button>
+        <button type="button" name="multiplication" class="ope" value="*" onclick="Arithmetic(this.value)">*</button>
+        <br>
+        <button type="button" name="four" value="4" onclick="numdisonscreen(this.value)">4</button>
+        <button type="button" name="five" value="5" onclick="numdisonscreen(this.value)">5</button>
+        <button type="button" name="six" value="6" onclick="numdisonscreen(this.value)">6</button>
+        <button type="button" name="minus" class="ope" value="-" onclick="Arithmetic(this.value)">-</button>
+        <br>
+        <button type="button" name="one" value="1" onclick="numdisonscreen(this.value)">1</button>
+        <button type="button" name="two" value="2" onclick="numdisonscreen(this.value)">2</button>
+        <button type="button" name="three" value="3" onclick="numdisonscreen(this.value)">3</button>
+        <button type="button" name="plus" class="ope" value="+" onclick="Arithmetic(this.value)">+</button>
+        <br>
+        <button type="button" name="plusorminus" value="+/-">+/-</button>
+        <button type="button" name="zero" value="0" onclick="numdisonscreen()">0</button>
+        <button type="button" name="point" value="." onclick="numdisonscreen()">.</button>
+        <button type="button" name="equal" class="ope" value="=" onclick="Answer()">=</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

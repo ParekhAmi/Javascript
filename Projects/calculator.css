@@ -1,0 +1,55 @@
+button {
+    color: black;
+    text-align: center;
+    font-weight: 800;
+    margin:5px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    
+    width:40px;
+    height: 40px;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.ope {
+    color: black;
+    text-align: center;
+    font-weight: 800;
+    margin:5px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    
+    width:40px;
+    height: 40px;
+    background-color: rgb(255, 136, 0);
+    padding: 10px;
+}
+.sym {
+    color: black;
+    text-align: center;
+    font-weight: 800;
+    margin:5px;
+    border: 1px solid rgb(43, 37, 37);
+    border-radius: 50%;
+   
+    width:40px;
+    height: 40px;
+    background-color:rgb(238, 106, 53);
+    padding: 10px;
+}
+input[type=number]{
+    margin: 5px;
+    border:1px solid black;
+    padding:12px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px grey;
+}
+div{
+    
+    padding: 5px;
+    width: 16%;
+    height: 50%;
+    border: 2px solid black;
+    box-shadow: 3px 3px 20px grey;
+}
