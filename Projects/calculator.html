@@ -11,7 +11,7 @@
         <div>
         <input type="number" name="screen">
         <br>
-        <button type="button" name="AC" class="sym" value="AC" >AC</button>
+        <button type="reset" name="AC" class="sym" value="AC" >AC</button>
         <button type="button" name="modulo" class="sym" value="%" onclick="Arithmetic(this.value)">%</button>
         <button type="reset" name="reset" class="sym" value="C">C</button>
         <button type="button" name="division" class="ope" value="/" onclick="Arithmetic(this.value)">/</button>
@@ -32,9 +32,9 @@
         <button type="button" name="plus" class="ope" value="+" onclick="Arithmetic(this.value)">+</button>
         <br>
         <button type="button" name="plusorminus" value="+/-">+/-</button>
-        <button type="button" name="zero" value="0" onclick="numdisonscreen()">0</button>
-        <button type="button" name="point" value="." onclick="numdisonscreen()">.</button>
-        <button type="button" name="equal" class="ope" value="=" onclick="Answer()">=</button>
+        <button type="button" name="zero" value="0" onclick="numdisonscreen(this.value)">0</button>
+        <button type="button" name="point" value="." onclick="numdisonscreen(this.value)">.</button>
+        <button type="button" name="equal" class="ope" value="=" onclick="Arithmetic(this.value)">=</button>
         </div>
     </form>
 
