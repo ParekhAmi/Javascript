@@ -1,33 +1,77 @@
 function numdisonscreen(num) {
 
-    calc.screen.value = num;
+    calc.screen.value += num;
 }
 
-
+var a,b;
+var oprt ="";
 
 function Arithmetic(opr) {
-    var a = calc.n1.value;
-    var b = calc.n2.value;
-    var c;
+    
+
     if (opr == "+") {
-        c = parseInt(a) + parseInt(b);
+        a = calc.screen.value ; 
+        calc.screen.value="";
+        oprt="+";
+
+        calc.screen.value = parseFloat(a) + parseFloat(a);
 
     }
-    if (opr == "-") {
-        c = parseInt(a) - parseInt(b);
+    else if (opr == "-") {
+        a = calc.screen.value ;
+        calc.screen.value=""; 
+        oprt="-"; 
 
+        calc.screen.value = parseFloat(a) - parseFloat(a) ;
+        
     }
-    if (opr == "*") {
-        c = parseInt(a) * parseInt(b);
+    else if (opr == "*") {
+        a = calc.screen.value ;
+        calc.screen.value=""; 
+        oprt="*";
 
+        calc.screen.value = parseFloat(a) * parseFloat(a) ;
+ 
     }
-    if (opr == "/") {
-        c = parseInt(a) / parseInt(b);
+    else if (opr == "/") {
+        a = calc.screen.value ; 
+        oprt="/";
+        calc.screen.value="";
 
+        calc.screen.value = parseFloat(a) / parseFloat(a);
+ 
     }
-    if (opr == "%") {
-        c = parseInt(a) % parseInt(b);
+    else if (opr == "%") {
+        a = calc.screen.value ; 
+        oprt="%";
+        calc.screen.value="";
 
+        calc.screen.value = parseFloat(a) % parseFloat(a) ;
     }
-    calc.ans.value = c;
+    //alert(oprt);
+    else if (opr == "=") {
+        //alert("Equall.." + oprt);
+        b = calc.screen.value ; 
+        if(oprt=="+")
+        {
+            calc.screen.value = parseFloat(a)+parseFloat(b);
+        }
+        else if(oprt=="-")
+        {
+            calc.screen.value = parseFloat(a)-parseFloat(b);
+        }
+        else if(oprt=="*")
+        {
+            calc.screen.value = parseFloat(a)*parseFloat(b);
+        }
+        else if(oprt=="/")
+        {
+            calc.screen.value = parseFloat(a)/parseFloat(b);
+        }
+        else if(oprt == "%")
+        {
+            calc.screen.value = parseFloat(a) % parseFloat(b);
+        }
+    }
+    
 }
